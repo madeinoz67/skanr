@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "skanr"
-version = "0.0.1"
+version = "0.0.2"
 description = "Multithreaded IPV4 port scanner written in python"
 authors = ["Stephen Eaton <seaton@strobotics.com.au>"]
 license = "MIT"

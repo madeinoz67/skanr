@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3
 """ main app for a multi-threaded network port scanner """
 #########
 #  skan.py
@@ -15,7 +14,7 @@ import ipaddress
 import threading
 from queue import Queue
 
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
 # get and parse command line arguments
 PARSER = argparse.ArgumentParser(
@@ -104,7 +103,7 @@ def scan_port(port):
 
         conn.close()
     except:
-        pass
+        pass  # just ignore any exception of a non connection / timeout
 
 
 def get_scan_job():
@@ -119,7 +118,7 @@ def get_scan_job():
 
 def start_worker_threads(count):
     "starts the requested amount of worker threads"
-    for x in range(count + 1):
+    for _ in range(count + 1):
         w = threading.Thread(target=get_scan_job)
         w.daemon = True
         w.start()
