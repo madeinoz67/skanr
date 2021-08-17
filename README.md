@@ -1,4 +1,4 @@
-# skan
+# skanr
 
 Multithreaded network port scanner for IPV4 addresses
 
@@ -8,7 +8,7 @@ Multithreaded network port scanner for IPV4 addresses
 
 ## installation
 
-`pip install skan`
+`pip install skanr`
 
 ## usage
 
@@ -17,8 +17,8 @@ Multithreaded network port scanner for IPV4 addresses
 Display the help
 
 ```
-skan -h
-usage: skan [-h] [-s] [-e] [-t] [--version] target_ip
+skanr -h
+usage: skanr [-h] [-s] [-e] [-t] [--version] target_ip
 
 Perform a network port scan of a host IP address
 
@@ -38,9 +38,9 @@ optional arguments:
 will scan an IP address from ports 1-1024 using 32 threads
 
 ```
-skan 10.37.129.9
+skanr 10.37.129.9
 
-skan v 0.0.1
+skanr v 0.0.1
 Scanning IP: 10.37.129.9 ports: 1 - 1024 threads: 32
 -=================================================================-
 port 21 :open
@@ -63,9 +63,9 @@ To scan a port range on the target machine use `-s` and `-e` to specify the star
 if no start ot end prot is given then defaults apply
 
 ```
-skan 10.37.129.9 -s 20 -e 100
+skanr 10.37.129.9 -s 20 -e 100
 
-skan.py v 0.0.1
+skanr v 0.0.1
 Scanning IP: 10.37.129.9 ports: 20 - 100 threads: 32
 -=================================================================-
 port 21 :open
@@ -80,9 +80,9 @@ port 80 :open
 To speed up the port scanning the number of threads can be passed using the `-t` argument up to a max of 1024 threads, to prevent starting unwanted threads, the number of threads started will never be greater than the number of ports to be scanned. 
 
 ```
-skan 10.37.129.9 -e 65535 -t 1024
+skanr 10.37.129.9 -e 65535 -t 1024
 
-skan v 0.0.1
+skanr v 0.0.1
 Scanning IP: 10.37.129.9 ports: 1 - 65535 threads: 1024
 -=================================================================-
 port 21 :open
